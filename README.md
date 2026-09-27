@@ -16,4 +16,10 @@ Criar menu e funcionalidades de adicionar e listar transações, além de lidar 
 
 ### Dificuldades encontradas
 
-Até agora não encontrei nenhuma dificuldade muito grande no desenvolvimento. Tudo que utilizei já havia praticado antes, então a codificação foi natural.
+Encontrei dificuldade no error handling. Acabei lidando com alguns erros e negligenciando outros. No final as correções foram feitas.
+
+### O que aprendi
+
+Aprendi que preciso ser mais exigente quanto à lidar com erros de entrada.
+Revisei o básico de Python.
+Conheci e usei pela primeira vez a biblioteca UUID nativa do Python.

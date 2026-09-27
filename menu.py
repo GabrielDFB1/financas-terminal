@@ -3,10 +3,6 @@ import uuid
 
 transactions = []
 
-
-# Uma transação contém os campos id, tipo, valor, descricao e data.
-# Tirei categoria pois não acho que faz sentido por enquanto.
-
 while True:
     print("-"*20)
     print("Gerenciador Financeiro")
@@ -23,8 +19,8 @@ while True:
         print("\nEntrada inválida\nTente novamente\n")
         continue
 
-    if escolha != 1 and escolha != 2 and escolha != 3:
-        print("\nValores inválidos\nTentenovamente!\n")
+    if escolha not in range(1, 4):
+        print("\nValores inválidos\nTente novamente!\n")
         continue
 
     if escolha == 3: break
