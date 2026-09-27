@@ -1,3 +1,5 @@
+import re
+
 transactions = list()
 
 
@@ -20,10 +22,24 @@ while (True):
     if escolha == 1:
         
         tipo = int(input("\n1 - Receita\n2 - Despesa\nTipo: "))
+        if tipo != 1 and tipo != 2:
+            print("\nEscolha do tipo inválida!\nTente novamente\n")
+            continue
+
         tipo = "receita" if tipo == 1 else "despesa"
-        valor = float(input("Valor: "))
+
+        try:
+            valor = float(input("Valor: "))
+        except ValueError:
+            print("\nValor digitado inválido.\nTente novamente\n")
+            continue
+
         descricao = input("Descrição: ")
         data = input("Data:" )
+
+        if not re.match(r"\d\d\/\d\d\/\d\d\d\d", data):
+            print("\nFormato de data inválido.\nData deve ser: dd/mm/yyyy\n")
+            continue
 
         transactions.append({
             "tipo": tipo,
@@ -35,7 +51,7 @@ while (True):
 
     elif escolha == 2:
         if len(transactions) == 0:
-            print("Não há transações realizadas.")
+            print("\nNão há transações realizadas.\n")
             continue
 
         print("-"*30)
